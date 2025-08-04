@@ -1,0 +1,355 @@
+.main-container {
+  display: flex;
+  height: 100vh;
+  height: 100dvh; /* Dynamic viewport height para móviles */
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+/* Sidebar de conversaciones */
+.contacts-sidebar {
+  flex: 0 0 320px;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--contacts-bg);
+  border-right: 1px solid var(--contacts-border);
+}
+
+.contacts-header {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--contacts-border);
+  height: 60px;
+  box-sizing: border-box;
+}
+
+.contacts-header h1 {
+  margin: 0;
+  flex: 1;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.contacts-list {
+  flex: 1;
+  overflow-y: auto;
+  background-color: var(--contacts-bg);
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  cursor: pointer;
+  border-bottom: 1px solid var(--contacts-border);
+  color: var(--contacts-text);
+  transition: background-color 0.2s;
+  background-color: var(--contacts-bg);
+}
+
+.contact-item:hover {
+  background-color: var(--contacts-hover);
+}
+
+.contact-item.active {
+  background-color: var(--contacts-active-bg);
+  color: var(--contacts-active-text);
+}
+
+.contact-item.active .contact-info p {
+  color: var(--contacts-active-subtitle);
+}
+
+.contact-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--secondary-color), var(--primary-light));
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-right: 1rem;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+  position: relative;
+}
+
+.contact-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.avatar-fallback {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--secondary-color), var(--primary-light));
+  color: white;
+  font-weight: bold;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.contact-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.contact-info h3 {
+  margin: 0 0 0.1rem 0;
+  font-size: 1rem;
+  color: inherit;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 600;
+}
+
+.contact-title {
+  font-size: 0.75rem;
+  color: var(--secondary-color);
+  font-weight: 500;
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.contact-item.active .contact-title {
+  color: var(--contacts-active-subtitle);
+}
+
+.contact-info p {
+  margin: 0;
+  color: var(--contacts-subtitle);
+  font-size: 0.85rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Área del chat */
+.chat-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background-light);
+}
+
+.chat-header {
+  background-color: var(--primary-color);
+  color: #ffffff;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-bottom: 1px solid var(--border-color);
+  height: 60px;
+  box-sizing: border-box;
+}
+
+.chat-contact-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex: 1;
+  justify-content: center;
+}
+
+.chat-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--secondary-color), var(--primary-light));
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  overflow: hidden;
+  position: relative;
+}
+
+.chat-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.chat-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.chat-details h2 {
+  margin: 0;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1.1rem;
+  line-height: 1.2;
+}
+
+.chat-status {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+
+.back-button {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: all 0.2s;
+  display: none;
+}
+
+.back-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.welcome-message {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  color: var(--text-primary);
+}
+
+.welcome-message h2 {
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+.welcome-message p {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+}
+
+/* Responsividad móvil */
+@media (max-width: 768px) {
+  .main-container {
+    position: relative;
+    height: 100vh;
+    height: 100dvh;
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+
+  .contacts-sidebar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+
+  .contacts-sidebar.mobile-open {
+    transform: translateX(0);
+  }
+
+  .contacts-sidebar.mobile-hidden {
+    transform: translateX(-100%);
+  }
+
+  .chat-area {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+  }
+
+  .chat-area.mobile-open {
+    transform: translateX(0);
+  }
+
+  .chat-area.mobile-hidden {
+    transform: translateX(100%);
+  }
+
+  .back-button.mobile-only {
+    display: block;
+  }
+
+  .welcome-message {
+    display: none;
+  }
+}
+
+/* Desktop - pantallas medianas */
+@media (min-width: 769px) and (max-width: 1199px) {
+  .contacts-sidebar {
+    flex: 0 0 300px;
+  }
+  
+  .mobile-hidden,
+  .mobile-open {
+    position: static !important;
+    transform: none !important;
+  }
+
+  .back-button.mobile-only {
+    display: none !important;
+  }
+}
+
+/* Desktop - pantallas grandes */
+@media (min-width: 1200px) {
+  .contacts-sidebar {
+    flex: 0 0 350px;
+  }
+  
+  .mobile-hidden,
+  .mobile-open {
+    position: static !important;
+    transform: none !important;
+  }
+
+  .back-button.mobile-only {
+    display: none !important;
+  }
+}
+
+/* Pantallas ultra anchas (1500px+) */
+@media (min-width: 1500px) {
+  .contacts-sidebar {
+    flex: 0 0 400px;
+  }
+}
+
+/* Pantallas 4K y ultra anchas (2000px+) */
+@media (min-width: 2000px) {
+  .contacts-sidebar {
+    flex: 0 0 450px;
+  }
+}

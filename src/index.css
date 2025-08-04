@@ -1,0 +1,158 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Tema claro (por defecto) */
+:root[data-theme="light"] {
+  --primary-color: #075e54;
+  --primary-light: #128c7e;
+  --secondary-color: #25d366;
+  --background-light: #f0f0f0;
+  --background-chat: #e5ddd5;
+  --text-primary: #1a1a1a;
+  --text-secondary: #4a4a4a;
+  --border-color: #d0d0d0;
+  --message-sent: #dcf8c6;
+  --message-received: #ffffff;
+  --message-sent-text: #1a1a1a;
+  --message-received-text: #1a1a1a;
+  --contacts-bg: #f0f0f0;
+  --contacts-text: #1a1a1a;
+  --contacts-subtitle: #4a4a4a;
+  --contacts-border: #e0e0e0;
+  --contacts-hover: #e8e8e8;
+  --contacts-active-bg: #128c7e;
+  --contacts-active-text: #ffffff;
+  --contacts-active-subtitle: rgba(255, 255, 255, 0.8);
+  
+  color: var(--text-primary);
+  background-color: var(--background-light);
+}
+
+/* Tema oscuro */
+:root[data-theme="dark"] {
+  --primary-color: #075e54;
+  --primary-light: #128c7e;
+  --secondary-color: #25d366;
+  --background-light: #1a1a1a;
+  --background-chat: #2a2a2a;
+  --text-primary: #ffffff;
+  --text-secondary: #cccccc;
+  --border-color: #404040;
+  --message-sent: #005c4b;
+  --message-received: #333333;
+  --message-sent-text: #ffffff;
+  --message-received-text: #ffffff;
+  --contacts-bg: #1a1a1a;
+  --contacts-text: #ffffff;
+  --contacts-subtitle: #aaaaaa;
+  --contacts-border: #555555;
+  --contacts-hover: #2a2a2a;
+  --contacts-active-bg: #128c7e;
+  --contacts-active-text: #ffffff;
+  --contacts-active-subtitle: rgba(255, 255, 255, 0.8);
+  
+  color: var(--text-primary);
+  background-color: var(--background-light);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--background-light);
+}
+
+/* Estilos accesibles para enlaces */
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover, a:focus {
+  color: var(--primary-light);
+  outline: 2px solid transparent;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--secondary-color);
+  outline-offset: 2px;
+}
+
+/* Estilos accesibles para botones */
+button {
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  padding: 0.6em 1.2em;
+  transition: all 0.2s ease;
+  min-height: 44px; /* Tamaño mínimo recomendado para touch */
+}
+
+button:focus-visible {
+  outline: 2px solid var(--secondary-color);
+  outline-offset: 2px;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Estilos accesibles para inputs */
+input, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: 0.6em;
+  min-height: 44px;
+}
+
+input:focus, textarea:focus {
+  outline: 2px solid var(--secondary-color);
+  outline-offset: 1px;
+  border-color: var(--primary-color);
+}
+
+/* Mejora de accesibilidad para usuarios con motion sensitivities */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Soporte para temas oscuros accesibles */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary-color: #128c7e;
+    --primary-light: #25d366;
+    --background-light: #1a1a1a;
+    --background-chat: #2a2a2a;
+    --text-primary: #ffffff;
+    --text-secondary: #cccccc;
+    --border-color: #404040;
+    --message-sent: #005c4b;
+    --message-received: #333333;
+  }
+}

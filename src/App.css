@@ -1,0 +1,54 @@
+.app {
+  min-height: 100vh;
+  min-height: 100dvh; /* Dynamic viewport height para móviles */
+  height: 100vh;
+  height: 100dvh;
+  width: 100vw;
+  max-width: 100vw;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa;
+}
+
+/* Responsive font sizes */
+@media (max-width: 768px) {
+  .app {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1199px) {
+  .app {
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1499px) {
+  .app {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1500px) and (max-width: 1999px) {
+  .app {
+    font-size: 17px;
+  }
+}
+
+@media (min-width: 2000px) {
+  .app {
+    font-size: 18px;
+  }
+}
