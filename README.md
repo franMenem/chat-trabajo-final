@@ -92,59 +92,10 @@ src/
 - [x] **Calidad de código** - Principios DRY, KISS, YAGNI
 - [x] **README.md** - Documentación completa
 
-## 🚧 Dificultades Presentadas y Soluciones
+## 🚧 Dificultades Presentadas
 
-### 1. **Manejo de Estado Global**
-**Problema:** Compartir el estado de mensajes entre múltiples componentes sin prop drilling.
-**Solución:** Implementación de Context API con useReducer para un manejo más escalable del estado.
+### 1. **Manejo de Estados**
+Compartir el estado de mensajes entre múltiples componentes sin prop drilling.
 
-### 2. **Enrutamiento Dinámico**
-**Problema:** Pasar parámetros de contacto entre rutas y mantener la sincronización.
-**Solución:** Uso de `useParams` de React Router y estructura de datos normalizada en el contexto.
-
-### 3. **Responsividad Compleja**
-**Problema:** Mantener usabilidad en el rango amplio de 320px-2000px.
-**Solución:** Sistema de breakpoints con CSS Grid/Flexbox y variables CSS personalizadas.
-
-### 4. **Accesibilidad**
-**Problema:** Garantizar contraste adecuado y navegación por teclado.
-**Solución:** Variables CSS para colores accesibles, focus states, y soporte para `prefers-reduced-motion`.
-
-## 🚀 Instalación y Uso
-
-```bash
-# Clonar el repositorio
-git clone [URL-del-repositorio]
-
-# Instalar dependencias
-npm install
-
-# Ejecutar en desarrollo
-npm run dev
-
-# Construir para producción
-npm run build
-
-# Preview de la build
-npm run preview
-```
-
-## 🌐 Despliegue
-
-La aplicación está configurada para desplegarse en **Vercel** con el archivo `vercel.json` que maneja las rutas de SPA correctamente.
-
-### Comandos de despliegue:
-```bash
-# Build de producción
-npm run build
-
-# La carpeta dist/ contiene los archivos para desplegar
-```
-
-## 👨‍💻 Autor
-
-Desarrollado como trabajo final de frontend - 2024
-
----
-
-*Esta aplicación demuestra el uso de tecnologías modernas de React siguiendo las mejores prácticas de desarrollo frontend.*
+### 2. **Responsividad**
+Mantener usabilidad en el rango amplio de 320px-2000px.
