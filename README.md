@@ -95,7 +95,7 @@ src/
 ## 🚧 Dificultades Presentadas
 
 ### 1. **Manejo de Estados**
-Compartir el estado de mensajes entre múltiples componentes sin prop drilling.
+Compartir el estado de mensajes entre múltiples componentes.
 
 ### 2. **Responsividad**
 Mantener usabilidad en el rango amplio de 320px-2000px.
